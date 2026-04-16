@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../include/main.h"
 
 
 EnumerateFile::EnumerateFile(const char* path):m_cfPtr(NULL)
@@ -22,8 +22,8 @@ EnumerateFile::~EnumerateFile()
 }
 
 /*
-* Εμπιστευομαστε το αρχειο εισοδου οτι εχει 
-* συγκεκριμενη γραμμογραφηση
+* Γ…Γ¬Γ°Γ©Γ³Γ΄Γ¥ΓµΓ―Γ¬Γ΅Γ³Γ΄Γ¥ Γ΄Γ― Γ΅Γ±Γ·Γ¥Γ©Γ― Γ¥Γ©Γ³Γ―Γ¤Γ―Γµ Γ―Γ΄Γ© Γ¥Γ·Γ¥Γ© 
+* Γ³ΓµΓ£ΓªΓ¥ΓªΓ±Γ©Γ¬Γ¥Γ­Γ§ Γ£Γ±Γ΅Γ¬Γ¬Γ―Γ£Γ±Γ΅Γ¶Γ§Γ³Γ§
 */
 bool EnumerateFile::MoveNext()
 {
@@ -33,18 +33,18 @@ bool EnumerateFile::MoveNext()
 	char* token = NULL;
 
 	/*
-	* διαβαζουμε την επομενη γραμμη απο το αρχείο:
+	* Γ¤Γ©Γ΅ΓΆΓ΅Γ¦Γ―ΓµΓ¬Γ¥ Γ΄Γ§Γ­ Γ¥Γ°Γ―Γ¬Γ¥Γ­Γ§ Γ£Γ±Γ΅Γ¬Γ¬Γ§ Γ΅Γ°Γ― Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ―:
 	*/
 	if (fgets((char*)lineBuffer, sizeof(lineBuffer) - 1, this->m_cfPtr) == NULL)
 		return false;
 	/*
-	* τι μινιμθμ μηκος που κανουμε δεκτο ειναι 8 χαρακτηρεs:
+	* Γ΄Γ© Γ¬Γ©Γ­Γ©Γ¬Γ¨Γ¬ Γ¬Γ§ΓªΓ―Γ² Γ°Γ―Γµ ΓªΓ΅Γ­Γ―ΓµΓ¬Γ¥ Γ¤Γ¥ΓªΓ΄Γ― Γ¥Γ©Γ­Γ΅Γ© 8 Γ·Γ΅Γ±Γ΅ΓªΓ΄Γ§Γ±Γ¥s:
 	*/
 	size_t line_lentgh = strlen(lineBuffer);
 	if (line_lentgh < 8)
 		return false;
 	/*
-	* Πεταμε απο το lineBuffer τον τελευταιο χαρακτηρα '\n'
+	* ΓΓ¥Γ΄Γ΅Γ¬Γ¥ Γ΅Γ°Γ― Γ΄Γ― lineBuffer Γ΄Γ―Γ­ Γ΄Γ¥Γ«Γ¥ΓµΓ΄Γ΅Γ©Γ― Γ·Γ΅Γ±Γ΅ΓªΓ΄Γ§Γ±Γ΅ '\n'
 	*/
 	//lineBuffer[line_lentgh - 1] = 0;
 
