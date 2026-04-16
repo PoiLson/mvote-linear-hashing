@@ -7,7 +7,7 @@ BUCKET_ENTRIES = 2
 
 
 program: 
-	$(CC) -o mvote EnumerateFile.cpp LinearHash.cpp main.cpp PostalCodeList.cpp Voter.cpp actions.cpp
+	$(CC) -o mvote ./src/EnumerateFile.cpp ./src/LinearHash.cpp ./src/main.cpp ./src/PostalCodeList.cpp ./src/Voter.cpp ./src/actions.cpp
 
 execute:
 	./mvote -f $(FILE) -b $(BUCKET_ENTRIES)
